@@ -3,9 +3,16 @@
 /******Handle all the inputs and outputs*************/
 /****************************************************/
 
-app.controller('moviesController', ['$scope','moviesService', function($scope, moviesService){
+app.controller('moviesController', ['$scope','moviesService','$window' , function($scope, moviesService, $window){
+
+  
 
   var moviesOptions = [];
+  debugger;
+
+  $scope.genreOptions = moviesService.genre;
+
+  $scope.selectedGenre = moviesService.genre[0];
 
   $scope.suggestedMovies = moviesOptions;
 
@@ -19,8 +26,17 @@ app.controller('moviesController', ['$scope','moviesService', function($scope, m
   };
 
   $scope.btnRemove = function(movie){
-    moviesService.removeMovieFromPull(movie);
-    moviesOptions[moviesOptions.indexOf(movie)] = moviesService.getRandMovie();
+    // if(moviesService.movie < 2){
+    //   moviesOptions[moviesOptions.indexOf(movie)] = moviesService.getRandMovie();
+    // }else{
+    //   $window.alert('Thats It !!!');
+    // }
+    var temp = moviesService.getRandMovie();
+    if (temp){
+      moviesOptions[moviesOptions.indexOf(movie)] = temp;
+    }else{
+      $window.alert('Thats it !!!');
+    }
   };
 
 
