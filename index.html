@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
+    <link rel="stylesheet" href="node_modules\font-awesome\css\font-awesome.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Hackathon Project!!</title>
+  </head>
+  <body ng-app="placeholder">
+    <div class="container"> <!-- NAVBAR SECTION -->
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1" ng-model="placeholder">
+          <div class="btn-group">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" ng-click="placeholder">Randomize by <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li class="divider genre">Genre</li>
+                <li class="divider actor">Actor</li>
+                <li class="divider pg">PG Rating</li>
+              </ul>
+          </div> <!-- btn-group closer -->
+        </div> <!-- col closer -->
+      </div> <!-- row closer -->
+    </div> <!-- container closer -->
+
+    <hr> <!-- BIG RED BUTTON SECTION -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <button type="button" class="btn btn-danger btn-rnd" ng-click="placeholder">
+            <br>
+            RANDOMIZE
+            <br>
+            <img class="btn-img" src="http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/glossy-black-icons-sports-hobbies/044485-glossy-black-icon-sports-hobbies-film-reel.png">
+          </button>
+        </div> <!-- col closer -->
+      </div> <!-- row closer -->
+    </div> <!-- container closer -->
+
+    <hr> <!-- DISPLAY SECTION -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="col-md-4 col-md-offset-1" ng-model="placeholder">
+            {{img}} <br>
+            {{title}} <br>
+            {{genre}}
+            {{R.T}} <br>
+            <button type="button" class="btn btn-link" ng-click="placeholder"><i class="fa fa-times fa-4x" aria-hidden="true"></i></button>
+          </div> <!-- col 4 closer -->
+
+          <div class="col-md-4 col-md-offset-1" ng-model="placeholder">
+            {{img}} <br>
+            {{title}} <br>
+            {{genre}}
+            {{R.T}} <br>
+            <button type="button" class="btn btn-link" ng-click="placeholder"><i class="fa fa-times fa-4x" aria-hidden="true"></i></button>
+
+          </div> <!-- col 4 closer -->
+        </div> <!-- col 12 closer -->
+      </div> <!-- row closer -->
+    </div> <!-- container closer -->
+
+  </body>
+</html>
