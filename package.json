@@ -17,10 +17,9 @@
   },
   "homepage": "https://github.com/AllonSegall/proj#readme",
   "dependencies": {
-
+    "angular": "^1.5.9",
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
-    "angular": "^1.5.9"
-
+    "jquery": "^3.1.1"
   }
 }
