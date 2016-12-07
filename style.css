@@ -42,6 +42,28 @@ a:active {
     top: 6px;
 }
 
+.dropdownGenre{
+  display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -57,3 +79,5 @@ a:active {
   content: "";
   clear: both;
 }
+
+
