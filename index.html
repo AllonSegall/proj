@@ -14,31 +14,20 @@
         <div class="row">
           <div class="col-md-10 col-md-offset-1" ng-model="placeholder">
             <div class="btn-group">
-              <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Randomize By
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <li> <button type="button" class="btn btn-link genre">Genre</button></li>
-                  <li> <button type="button" class="btn btn-link actor">Actor</button></li>
-                  <li> <button type="button" class="btn btn-link pgRating">PG Rating</button></li>
-                </ul>
-                <span>So many movies... so little time</span>
-              </div>
+
+              <div class="dropdownGenre">
+                <select class="btn btn-primary dropdown-toggle" ng-options="item as item.label for item in genreOptions track by item.id" ng-model="selectedGenre" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></select>
+              </div> <!-- dropdown genre closer -->
+
+              <div class="dropdownPG">
+                <select class="btn btn-primary dropdown-toggle" ng-options="item as item.label for item in pgOptions track by item.id" ng-model="selectedpg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></select>
+              </div> <!-- dropdown PG closer -->
+
             </div> <!-- btn-group closer -->
           </div> <!-- col closer -->
         </div> <!-- row closer -->
       </div> <!-- container closer -->
 
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <select ng-options="item as item.label for item in genreOptions track by item.id" ng-model="selectedGenre"></select>
-        </div>
-      </div>
-    </div>
 
     <hr> <!-- BIG RED BUTTON SECTION -->
 
@@ -74,9 +63,9 @@
 
     <script type="text/javascript" src="node_modules\jquery\dist\jquery.min.js"></script>
     <script type="text/javascript" src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
     <script src="node_modules/angular/angular.min.js"></script>
-    <script src="app.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <!-- <script src="app.js"></script> -->
     <script src="movies_service.js"></script>
     <script src="movies_controller.js"></script>
   </body>
