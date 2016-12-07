@@ -8,7 +8,7 @@ app.controller('moviesController', ['$scope','moviesService','$window' , functio
 
 
   var moviesOptions = [];
-  debugger;
+
 
   $scope.genreOptions = moviesService.genre;
 
