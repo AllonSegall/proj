@@ -8,11 +8,18 @@ app.controller('moviesController', ['$scope','moviesService','$window' , functio
 
 
   var moviesOptions = [];
+<<<<<<< HEAD:movies_controller.js
 
+=======
+>>>>>>> 438637b888c2389370008d9b4546e58bbbab631b:public/movies_controller.js
 
-  $scope.genreOptions = moviesService.genre;
+  moviesService.getGenreList().then(function () {
+       $scope.genreOptions = moviesService.genre;
+       $scope.selectedGenre = moviesService.genre[0];
+  });
+  
 
-  $scope.selectedGenre = moviesService.genre[0];
+  
 
   $scope.pgOptions = moviesService.pg;
 

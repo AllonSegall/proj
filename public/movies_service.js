@@ -39,7 +39,7 @@ app.factory('moviesService', ['$http', function ($http) {
 
   }
 
-  movies.genre = dummyGenre;
+  
   movies.pg = dummyPG;
 
   movies.getRandMovie = function(){
@@ -78,6 +78,20 @@ app.factory('moviesService', ['$http', function ($http) {
   /*************server shit***************/
 
 
+  //Ask for the Genre list from the server
+    movies.getGenreList = function () {
+     return $http.get('/genre').success(function (data) {
+      console.log(data);
+      
+      console.log(data.genres[0].id);
+      console.log(data.genres[0].name);
+      angular.copy(data.genres, movies.genre);
+      movies.genre.splice(0, 0, {id: 0, name: "Select Genre"});
+    });
+  };
+
+
+
   movies.getMoviesByActorFromServer = function (actor) {
      $http.get('moviesServer').success(function (data) {
       console.log(data)
@@ -98,11 +112,9 @@ app.factory('moviesService', ['$http', function ($http) {
      $http.get('moviesServer').success(function (data) {
       console.log(data)
 
-      angular.copy(data, movies.moviesPull);
+      angular.copy(data, movies.moviesPull); 
     });
   };
-
-
 
   return movies;
 
