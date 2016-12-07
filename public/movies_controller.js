@@ -8,11 +8,14 @@ app.controller('moviesController', ['$scope','moviesService','$window' , functio
 
 
   var moviesOptions = [];
-  debugger;
 
-  $scope.genreOptions = moviesService.genre;
+  moviesService.getGenreList().then(function () {
+       $scope.genreOptions = moviesService.genre;
+       $scope.selectedGenre = moviesService.genre[0];
+  });
+  
 
-  $scope.selectedGenre = moviesService.genre[0];
+  
 
   $scope.pgOptions = moviesService.pg;
 
