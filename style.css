@@ -17,10 +17,13 @@
   color: red;
 }
 
-.movie1 {
+.movi-item {
   background-color: blue;
+  color: #fff;
 }
 
-.movie2 {
-  background-color: green;
+.movie-image{
+  max-width: 100%;
+  max-height: 500px;
+
 }

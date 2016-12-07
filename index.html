@@ -8,6 +8,7 @@
   </head>
   <body ng-app="JasonsMoviesApp" ng-controller="moviesController" >
 
+
     <div class="container"> <!-- NAVBAR SECTION -->
       <div class="row">
         <div class="col-md-10 col-md-offset-1" ng-model="placeholder">
@@ -23,12 +24,22 @@
       </div> <!-- row closer -->
     </div> <!-- container closer -->
 
-    <hr> <!-- BIG RED BUTTON SECTION -->
 
+
+    <hr> <!-- BIG RED BUTTON SECTION -->
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <button type="button" class="btn btn-danger btn-rnd" ng-click="btn-rand(X)">
+          <select ng-options="item as item.label for item in genreOptions track by item.id" ng-model="selectedGenre"></select>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 col-md-offset-5">
+          <button type="button" class="btn btn-danger btn-rnd" ng-click="btnRand()">
             <br>
             RANDOMIZE
             <br>
@@ -43,25 +54,29 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="col-md-4 col-md-offset-1 movie1" ng-model="movie-Left">
-            {{img}} <br>
-            {{title}} <br>
-            {{genre}}
-            {{R.T}} <br>
-            <button type="button" class="btn btn-link" ng-click="btn-remove($index)"><i class="fa fa-times fa-4x" aria-hidden="true"></i></button>
+          <div class="col-md-4 col-md-offset-1 movi-item" ng-repeat="movie in suggestedMovies">
+             <img class="movie-image img-thumbnail" src="{{movie.img}}">
+             <h2>{{movie.title}}</h2>
+             <h3>Genre: {{movie.genre}}</h3>
+             <h3>Run-time: {{movie.rt}}</h3>
+            <button type="button" class="btn btn-link pull-right" ng-click="btnRemove(movie)"><i class="fa fa-times fa-4x" aria-hidden="true"></i></button>
           </div> <!-- col 4 closer -->
 
-          <div class="col-md-4 col-md-offset-1 movie2" ng-model="movie-right">
-            {{img}} <br>
-            {{title}} <br>
-            {{genre}}
-            {{R.T}} <br>
-            <button type="button" class="btn btn-link" ng-click="btn-remove($index)"><i class="fa fa-times fa-4x" aria-hidden="true"></i></button>
+          <!-- <div class="col-md-4 col-md-offset-1 movie2" ng-model="movie-right">
+             <img src="{{img}}"> <br>
+             <h2>{{title}}</h2> <br>
+             <h3>{{genre}}</h3>
+             <h3>{{rt}}</h3> <br>
+            <button type="button" class="btn btn-link" ng-click="btnRemove($index)"><i class="fa fa-times fa-4x" aria-hidden="true"></i></button>
 
-          </div> <!-- col 4 closer -->
+          </div> <! col 4 closer --> 
         </div> <!-- col 12 closer -->
       </div> <!-- row closer -->
-    </div> <!-- container closer -->
-
+    </div> <!-- container closer -->    
+    
+      <script src="node_modules/angular/angular.min.js"></script>
+      <script src="app.js"></script>
+      <script src="movies_service.js"></script>
+      <script src="movies_controller.js"></script>
   </body>
 </html>
