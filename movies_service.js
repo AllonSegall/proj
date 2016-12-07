@@ -12,7 +12,15 @@ var dummyData  = [
     {label: 'Drama', id: 1},
     {label: 'Action', id: 2},
     {label: 'Comedy', id: 3},
-    {label: 'Romance', id: 4}
+    {label: 'ChickFlick', id: 4}
+    ];
+
+    var dummyPG = [
+      {label: "Select PG Rating", id: 0},
+      {label: "PG", id: 1},
+      {label: "PG-13", id: 2},
+      {label: "R", id: 3},
+      {label: "CD-17", id: 4}
     ];
 
 /*******************movies main service*********************/
@@ -30,8 +38,9 @@ app.factory('moviesService', ['$http', function ($http) {
     pg:[]
 
   }
-  
+
   movies.genre = dummyGenre;
+  movies.pg = dummyPG;
 
   movies.getRandMovie = function(){
     if(movies.moviesPull.length > 0){
@@ -56,9 +65,9 @@ app.factory('moviesService', ['$http', function ($http) {
   //   }else{
   //     //handle later
   //   }
-    
+
   // };
-  
+
   //just for testing
   movies.getMoviesFromDummy = function(){
     movies.moviesPull = dummyData;
@@ -83,7 +92,7 @@ app.factory('moviesService', ['$http', function ($http) {
 
       angular.copy(data, movies.moviesPull);
     });
-  };  
+  };
 
   movies.getMoviesByPGFromServer = function (pg) {
      $http.get('moviesServer').success(function (data) {
@@ -91,7 +100,7 @@ app.factory('moviesService', ['$http', function ($http) {
 
       angular.copy(data, movies.moviesPull);
     });
-  };  
+  };
 
 
 

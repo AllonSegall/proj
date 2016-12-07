@@ -5,7 +5,7 @@
 
 app.controller('moviesController', ['$scope','moviesService','$window' , function($scope, moviesService, $window){
 
-  
+
 
   var moviesOptions = [];
   debugger;
@@ -13,6 +13,10 @@ app.controller('moviesController', ['$scope','moviesService','$window' , functio
   $scope.genreOptions = moviesService.genre;
 
   $scope.selectedGenre = moviesService.genre[0];
+
+  $scope.pgOptions = moviesService.pg;
+
+  $scope.selectedpg = moviesService.pg[0];
 
   $scope.suggestedMovies = moviesOptions;
 
