@@ -49,6 +49,16 @@ a:active {
 .dropdownPG{
   display: inline-block;
 }
+.actors_search{
+  display: inline-block;
+}
+.main_head{
+  color: green;
+  font-family: monospace;
+}
+body{
+  background-color: black;
+}
 
 
 
