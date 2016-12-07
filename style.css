@@ -48,18 +48,57 @@ a:active {
 
 .dropdownPG{
   display: inline-block;
+  margin-left: 5px;
 }
 .actors_search{
   display: inline-block;
 }
 .main_head{
-  color: green;
+  color: white;
   font-family: monospace;
+  font-size: 50px;
+  font-weight: 500;
+  text-align: center;
 }
 body{
   background-color: black;
 }
-
+.movie-image{
+  width: 400px;
+  height: 430px;
+}
+.title{
+  color: white;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+  font-size: 40px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  filter: brightness(60%)
+}
+.genre{
+  color: white;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+  font-size: 40px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  filter: brightness(60%)
+}
+.overview{
+  color: white;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+  font-size: 22px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  filter: brightness(60%)
+}
+.actor_input{
+  display: inline-block;
+  margin-left: 5px;
+}
+ 
 
 
 

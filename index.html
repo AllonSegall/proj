@@ -22,11 +22,10 @@
               <div class="dropdownPG">
                 <select class="btn btn-primary dropdown-toggle" ng-options="item as item.label for item in pgOptions track by item.id" ng-model="selectedpg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></select>
               </div> <!-- dropdown PG closer -->
-
+              <form class="actor_input">
+                <input type="text" name="actor_search" placeholder="Actors" ng-modle="actorModel">
+              </form>
             </div> <!-- btn-group closer -->
-            <form class="actors_search">
-              <input type="text" name="Actors" placeholder="Actors" ng-model="actors">
-            </form>
           </div> <!-- col closer -->
         </div> <!-- row closer -->
       </div> <!-- container closer -->
@@ -54,9 +53,9 @@
         <div class="col-md-12">
           <div class="col-md-4 col-md-offset-1 movi-item" ng-repeat="movie in suggestedMovies">
              <img class="movie-image img-thumbnail" src="{{movie.img}}">
-             <h2>{{movie.title}}</h2>
-             <h3>Genre: {{movie.genre}}</h3>
-             <h3>Run-time: {{movie.rt}}</h3>
+             <h2 class="title">{{movie.title}}</h2>
+             <h3 class="genre">Genre: {{movie.genre}}</h3>
+             <h3 class="overview">Description: {{movie.overview}}</h3>
             <button type="button" class="btn btn-link pull-right" ng-click="btnRemove(movie)"><i class="fa fa-times fa-4x" aria-hidden="true"></i></button>
           </div> <!-- col 4 closer -->
         </div> <!-- col 12 closer -->
@@ -68,10 +67,7 @@
     <script type="text/javascript" src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
     <script src="node_modules/angular/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
-
     <!-- <script src="app.js"></script> -->
-
-    <script src="app.js"></script>
     <script src="movies_service.js"></script>
     <script src="movies_controller.js"></script>
   </body>
